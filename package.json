@@ -1,0 +1,19 @@
+{
+  "name": "discord.botessentials",
+  "version": "1.0.0",
+  "description": "Ez egy szar",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lavalink": "java -jar Lavalink.jar"
+  },
+  "author": "!/Mééz\\!MateHUN!/Mééz\\!",
+  "license": "ISC",
+  "dependencies": {
+    "common-tags": "^1.8.0",
+    "discord.js": "^11.6.4",
+    "discord.js-commando": "^0.10.0",
+    "erela.js": "^1.1.8",
+    "moment": "^2.25.3"
+  }
+}
