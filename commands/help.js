@@ -18,6 +18,7 @@ exports.run = async (bot, message, args, prefix, moment) =>
         .addField("**?report @player indok**", "Egyszerü report!")
         .addField("**?serverinfo**", `${emo[":D"]} meg mutatja a szerver infokat/adatokat ${emo[":D"]}`)
         .addField("**?userinfo**", `meg mutatja az adataid `)
+        .addBlankField()
         .addField("**Idő:**", moment().format('hh:mm'))
         .setFooter(`Parancsot meg hívta: ${message.author.tag}`, message.author.avatarURL)
         .setAuthor(`Készítette:\n ${emo[":pipa"]} !/Mééz\!MateHUN!/Mééz\!#2427 ${emo[":pipa"]}`)

@@ -22,6 +22,7 @@ exports.run = async (bot, message, args, prefix, moment) =>
         .addField("**1.9.2**", "**°**Report parancs")
         .addField("**1.9.3**", "**°**Userinfo")
         .addField("**1.9*3**", "**°**Time?")
+        .addBlankField()
         .addField("**Idő:**", moment().format('hh:mm'))
         .setFooter(`Parancsot meg hívta: ${message.author.tag}`)
         .setAuthor("Készítette:\n !/Mééz\\!MateHUN!/Mééz\\!#2427")
