@@ -6,7 +6,12 @@ const ms = require('ms')
 exports.run = async (bot, message, args, prefix) =>
 { 
 
-    if (message.author.id !== '575342593630797825', '480049452535775243') return message.channel.send(message.author.toString() + '\` Nincs jogosultságod a használatára!\`')
+    let jog = [
+        '575342593630797825',
+        '480049452535775243'
+    ]
+
+    if (message.author.id !== jog) return message.channel.send(message.author.toString() + '\` Nincs jogosultságod a használatára!\`')
 
     if(!bot.lockit) bot.lockit = [];
     let time = args.join(' ');
