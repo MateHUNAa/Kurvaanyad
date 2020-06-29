@@ -66,11 +66,7 @@ bot.on("message", message => {
 
 
 //---------------------####Server__Stats####----------------------------------\\
-/*
-setInterval(function(){ 
-  bot.channels.get('711518249749184512').setName(`Time ${moment().format('LT')}`)
-}, 60*1000);
-*/
+
 
 //member Counter --------------------------------
 
