@@ -27,8 +27,10 @@ exports.run = async (bot, message, args, prefix) =>
           .addField('Time: ', moment().format('YYYY, MMMM, hh:mm:ss'))
           .addField('Indok: ', reson)
           let repch = message.guild.channels.find(channel => channel.name === 'reportlog')
-          repch.send(reportEmbed)
           message.channel.send(`${message.author.toString()} Reportodat el küldtük!`)
-          return;
-
+          repch.send(reportEmbed).then(async message => {
+            await message.react(emo.mute);
+            await message.react(emo.ban);
+            await message.react(emo.unban);
+          })
 };
