@@ -1,8 +1,9 @@
 const Discord = require('discord.js');
 const prefix = '?'
-const token = process.env.token;
+const token = 'NzI0MTc1MTUwMjExMzk5NzAx.Xu8Wqg.3urltJZBKtWlzVpy5_Lng-z2x6k';
 var bot = new Discord.Client();
 const moment = require('moment')
+const colors = require('./color.json')
 moment.locale('hu')
 
 
@@ -77,11 +78,17 @@ const serverStats = {
     botCountID: '710340885933719562',
   }
 
+  let embed = new Discord.RichEmbed();
   bot.on("guildMemberAdd", member => {
     if(member.guild.id !== serverStats.guildID) return;
     bot.channels.get(serverStats.totalUsersID).setName(`Total Users: ${member.guild.memberCount}`);
     bot.channels.get(serverStats.memberCountID).setName(`member Count: ${member.guild.members.filter(m => !m.user.bot).size}`);
     bot.channels.get(serverStats.botCountID).setName(`Bot Count: ${member.guild.members.filter(m => m.user.bot).size}`);
+    embed.setTitle(`${member.user.tag} Csatlakozott!`)
+    embed.setThumbnail(member.user.displayAvatarURL)
+    embed.setColor(colors.zöld)
+    const join = member.guild.channels.find(channel => channel.id === "560864126180786197");
+    join.send(embed)
   });
   
   bot.on("guildMemberRemove", member => {
@@ -89,6 +96,11 @@ const serverStats = {
     bot.channels.get(serverStats.totalUsersID).setName(`‍Total Users: ${member.guild.memberCount}`);
     bot.channels.get(serverStats.memberCountID).setName(`member Count: ${member.guild.members.filter(m => !m.user.bot).size}`);
     bot.channels.get(serverStats.botCountID).setName(`Bot Count: ${member.guild.members.filter(m => m.user.bot).size}`);
+    embed.setTitle(`${member.user.tag} Itt hagyott minket!`)
+    embed.setThumbnail(member.user.displayAvatarURL)
+    embed.setColor(colors.világos_piros)
+    const leave = member.guild.channels.find(channel => channel.id === "560871511737761830");
+    leave.send(embed)
   });
 
 //---------------------####Server__Stats####----------------------------------\\
