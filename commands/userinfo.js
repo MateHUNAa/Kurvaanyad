@@ -7,7 +7,7 @@ exports.run = async (bot, message, args, prefix) =>
           const uembed = new Discord.RichEmbed()
           .setColor(szinek.világos_kék)
           .setTitle("User Info")
-          .setThumbnail(message.guild.iconURL)
+          .setThumbnail(message.author.displayAvatarURL)
           .setAuthor(`${message.author.username} Info: `, message.author.displayAvatarURL)
           .addField("**UserName:**", `${message.author.username}`, true)
           .addField("**#ID:**", `${message.author.discriminator}`, true)
