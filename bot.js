@@ -87,7 +87,6 @@ const serverStats = {
     embed.setTitle(`${member.user.tag} Csatlakozott!`)
     embed.setThumbnail(member.user.displayAvatarURL)
     embed.setColor(colors.zöld)
-    embed.addField("**Created At:**", `${moment(message.author.createdAt).format('YYYY, MMMM, hh:mm:ss')}`, true)
     const join = member.guild.channels.find(channel => channel.id === "560864126180786197");
     join.send(embed)
   });
@@ -100,7 +99,7 @@ const serverStats = {
     embed.setTitle(`${member.user.tag} Itt hagyott minket!`)
     embed.setThumbnail(member.user.displayAvatarURL)
     embed.setColor(colors.világos_piros)
-    embed.addField("**Joined At:**", `${moment(message.author.joinedAt).format('YYYY, MMMM, hh:mm:ss')}`, true)
+
     const leave = member.guild.channels.find(channel => channel.id === "560871511737761830");
     leave.send(embed)
   });
