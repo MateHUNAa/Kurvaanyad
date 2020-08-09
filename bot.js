@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const prefix = '?'
-const token = 'NzI0MTc1MTUwMjExMzk5NzAx.Xu8Wqg.3urltJZBKtWlzVpy5_Lng-z2x6k';
+//const token = 'NzI0MTc1MTUwMjExMzk5NzAx.Xu8Wqg.3urltJZBKtWlzVpy5_Lng-z2x6k';
 var bot = new Discord.Client();
 const moment = require('moment')
 const colors = require('./color.json')
@@ -111,4 +111,4 @@ bot.on('message', (message)  => {
   }
 })
 
-bot.login(token);
+bot.login(process.env.token);
