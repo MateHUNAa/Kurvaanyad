@@ -10,7 +10,7 @@ exports.run = async (bot, message, args, prefix) =>
         return message.channel.send('Adj meg egy szöveget').then(r => r.delete(3000))
     }
     figlet.text(args.join(' '), {
-        font: 'big',
+        font: 'Big',
         horizontalLayout: 'default',
         verticalLayout: 'default',
         width: 1000,
