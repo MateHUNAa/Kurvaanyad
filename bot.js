@@ -78,14 +78,15 @@ const serverStats = {
     botCountID: '710340885933719562',
   }
 
-  let embed = new Discord.RichEmbed();
   bot.on("guildMemberAdd", member => {
     if(member.guild.id !== serverStats.guildID) return;
     bot.channels.get(serverStats.totalUsersID).setName(`Total Users: ${member.guild.memberCount}`);
     bot.channels.get(serverStats.memberCountID).setName(`member Count: ${member.guild.members.filter(m => !m.user.bot).size}`);
     bot.channels.get(serverStats.botCountID).setName(`Bot Count: ${member.guild.members.filter(m => m.user.bot).size}`);
-    embed.setTitle(`${member.user.tag} Csatlakozott!`)
+    let embed = new Discord.RichEmbed();
+    embed.setAuthor(`${member.user.tag} Csatlakozott!`)
     embed.setThumbnail(member.user.displayAvatarURL)
+    embed.addField(`${member.user.tag} Ekkor készítette a discord felhasználóját: `, `**${moment(member.createdAt).format('YYYY-MM-DD hh:mm:ss')}**`)
     embed.setColor(colors.zöld)
     const join = member.guild.channels.find(channel => channel.id === "560864126180786197");
     join.send(embed)
@@ -96,9 +97,11 @@ const serverStats = {
     bot.channels.get(serverStats.totalUsersID).setName(`‍Total Users: ${member.guild.memberCount}`);
     bot.channels.get(serverStats.memberCountID).setName(`member Count: ${member.guild.members.filter(m => !m.user.bot).size}`);
     bot.channels.get(serverStats.botCountID).setName(`Bot Count: ${member.guild.members.filter(m => m.user.bot).size}`);
-    embed.setTitle(`${member.user.tag} Itt hagyott minket!`)
-    embed.setThumbnail(member.user.displayAvatarURL)
-    embed.setColor(colors.világos_piros)
+    let embed2 = new Discord.RichEmbed();
+    embed2.setAuthor(`${member.user.tag} Itt hagyott minket!`)
+    embed2.setThumbnail(member.user.displayAvatarURL)
+    embed2.setColor(colors.világos_piros)
+    embed2.addField(`${member.user.tag} Ekkor csatlakozott a szerverhez:`, `**${moment(member.joinedAt).format('YYYY-MM-DD hh:mm:ss')}**`)
 
     const leave = member.guild.channels.find(channel => channel.id === "560871511737761830");
     leave.send(embed)
