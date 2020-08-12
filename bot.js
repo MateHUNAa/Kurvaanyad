@@ -102,9 +102,8 @@ const serverStats = {
     embed2.setThumbnail(member.user.displayAvatarURL)
     embed2.setColor(colors.világos_piros)
     embed2.addField(`${member.user.tag} Ekkor csatlakozott a szerverhez:`, `**${moment(member.joinedAt).format('YYYY-MM-DD hh:mm:ss')}**`)
-
     const leave = member.guild.channels.find(channel => channel.id === "560871511737761830");
-    leave.send(embed)
+    leave.send(embed2)
   });
 
 //---------------------####Server__Stats####----------------------------------\\
