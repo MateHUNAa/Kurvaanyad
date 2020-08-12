@@ -86,7 +86,7 @@ const serverStats = {
     let embed = new Discord.RichEmbed();
     embed.setAuthor(`${member.user.tag} Csatlakozott!`)
     embed.setThumbnail(member.user.displayAvatarURL)
-    embed.addField(`${member.user.tag} Ekkor készítette a discord felhasználóját: `, `**${moment(member.createdAt).format('YYYY-MM-DD hh:mm:ss')}**`)
+    embed.addField(`${member.user.tag} Ekkor készítette a discord felhasználóját: `, `**${moment(member.user.createdAt).format('YYYY-MM-DD hh:mm:ss')}**`)
     embed.setColor(colors.zöld)
     const join = member.guild.channels.find(channel => channel.id === "560864126180786197");
     join.send(embed)
@@ -101,7 +101,7 @@ const serverStats = {
     embed2.setAuthor(`${member.user.tag} Itt hagyott minket!`)
     embed2.setThumbnail(member.user.displayAvatarURL)
     embed2.setColor(colors.világos_piros)
-    embed2.addField(`${member.user.tag} Ekkor csatlakozott a szerverhez:`, `**${moment(member.joinedTimestamp).format('YYYY-MM-DD hh:mm:ss')}**`)
+    embed2.addField(`${member.user.tag} Ekkor csatlakozott a szerverhez:`, `**${moment(member.guild.joinedAt).format('YYYY-MM-DD hh:mm:ss')}**`)
     const leave = member.guild.channels.find(channel => channel.id === "560871511737761830");
     leave.send(embed2)
   });
